@@ -1,0 +1,64 @@
+@import "./shared/shared.css";
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky; top: 0; height: 100vh;
+  background: linear-gradient(180deg, rgba(37,99,235,0.12), rgba(255,255,255,0.02)), var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 16px 12px;
+  display: grid; grid-template-rows: auto 1fr auto; gap: 16px;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; padding: 8px 8px; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 12px;
+  background: linear-gradient(135deg, #2563EB, #3B82F6); color: white;
+  display: grid; place-items: center; font-weight: 800;
+}
+.brand-text strong { display: block; font-size: 14px; color: var(--text); }
+.brand-text span { color: var(--muted); font-size: 12px; }
+
+.nav { display: grid; gap: 6px; }
+.sidebar-link {
+  display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 10px; color: var(--text);
+  text-decoration: none; border: 1px solid transparent;
+}
+.sidebar-link:hover { background: rgba(37,99,235,0.06); border-color: rgba(37,99,235,0.15); }
+.sidebar-link.active { background: rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.3); }
+.sidebar .icon { width: 18px; text-align: center; }
+
+.sidebar-footer { padding: 8px 8px; }
+.sidebar-footer .tip { font-size: 12px; color: var(--muted); display: inline-flex; gap: 8px; align-items: center; }
+.sidebar-footer .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--secondary); }
+
+.content {
+  display: grid; grid-template-rows: auto 1fr auto; min-height: 100vh;
+}
+.page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(37,99,235,0.06), rgba(249,250,251,1));
+}
+.page-header h1 { margin: 0; font-size: 20px; }
+.header-actions { display: flex; gap: 10px; }
+
+.page-body { padding: 20px 24px; }
+.page-footer { padding: 12px 24px; border-top: 1px solid var(--border); background: var(--surface); }
+
+@media (max-width: 960px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; grid-template-rows: auto; }
+}
