@@ -11,6 +11,9 @@ import Reports from './pages/Reports';
 import Categories from './pages/Categories';
 import Settings from './pages/Settings';
 
+/* Ensure app boots in dark mode */
+document.documentElement.setAttribute('data-theme', 'dark');
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

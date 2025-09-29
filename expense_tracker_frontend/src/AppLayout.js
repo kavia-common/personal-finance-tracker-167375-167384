@@ -17,6 +17,10 @@ function SidebarLink({ to, label, icon }) {
 
 // PUBLIC_INTERFACE
 export default function AppLayout() {
+  /**
+   * Main application shell with sidebar and header.
+   * Uses CSS variables for dark theme styling; footer uses 'muted' class for consistency.
+   */
   return (
     <div className="app-shell">
       <aside className="sidebar" aria-label="Primary">
@@ -54,7 +58,7 @@ export default function AppLayout() {
           <Outlet />
         </section>
         <footer className="page-footer">
-          <small style={{ color: theme.colors.textMuted }}>© {new Date().getFullYear()} Expense Tracker</small>
+          <small className="muted">© {new Date().getFullYear()} Expense Tracker</small>
         </footer>
       </main>
     </div>
